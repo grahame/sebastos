@@ -24,6 +24,8 @@ will take a few minutes to complete. At any later time, you can use the `update`
 Edit the `.sebastos/config.toml` file and set up as many `[[query]]` blocks as you like, to download by author, subject, title, and so on.
 Then run `uvx sebastos sync` and matching books will be downloaded. If you've pared back your queries, books may be deleted, although the tool will ask you to confirm before it does so.
 
+If you'd like to see the metadata that queries run against, just run `uvx sebastos list`
+
 ## Donations
 
 I'm conscious that Standard Ebooks rely upon donations to operate. You can [donate here](https://standardebooks.org/donate) - please do so if you find some value in this tool.
