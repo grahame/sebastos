@@ -296,7 +296,7 @@ format = 'epub'
 #   - subject
 #   - collection
 #   - source
-#   - descriptio
+#   - description
 #   - long_description
 #   - language
 # within a query, patterns are combined with AND
