@@ -22,9 +22,21 @@ The `init` subcommand will scan the standardebooks github organisation for ebook
 will take a few minutes to complete. At any later time, you can use the `update` subcommand to redo this scan. This will only download metadata for new ebooks, so it will be substantially quicker than the initial scan.
 
 Edit the `.sebastos/config.toml` file and set up as many `[[query]]` blocks as you like, to download by author, subject, title, and so on.
-Then run `uvx sebastos sync` and matching books will be downloaded. If you've pared back your queries, books may be deleted, although the tool will ask you to confirm before it does so.
+By default, the following query is provided as an example, which will download _Pride and Prejudice_ by Jane Austen.
+
+```toml
+[[query]]
+author = "Jane Austen"
+title = "Pride*"
+```
+
+Run `uvx sebastos sync` and matching books will be downloaded. If you've pared back your queries, books may be deleted, although the tool will ask you to confirm before it does so.
 
 If you'd like to see the metadata that queries run against, just run `uvx sebastos list`
+
+## Configuration
+
+
 
 ## Donations
 
