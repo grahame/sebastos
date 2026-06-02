@@ -1,6 +1,6 @@
 [project]
 name = "sebastos"
-version = "0.1.1"
+version = "0.1.2"
 description = "local query&sync of standardebooks"
 readme = "README.md"
 requires-python = ">=3.12"

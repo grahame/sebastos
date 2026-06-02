@@ -104,17 +104,19 @@ def parse_opf(opf_content: str) -> dict:
     sources = [s.text for s in metadata.findall("dc:source", NAMESPACES) if s.text]
     authors = [s.text for s in metadata.findall("dc:creator", NAMESPACES) if s.text]
     subjects = [s.text for s in metadata.findall("dc:subject", NAMESPACES) if s.text]
-    subjects += [
+    categories = [
         m.text
         for m in metadata.findall("opf:meta", NAMESPACES)
         if m.get("property") == "se:subject"
     ]
+    subjects += categories
 
     return {
         "identifier": metadata.findtext("dc:identifier", namespaces=NAMESPACES),
         "title": metadata.findtext("dc:title", namespaces=NAMESPACES),
         "author": authors,
         "subject": subjects,
+        "category": categories,
         "collection": collections,
         "source": sources,
         "description": metadata.findtext("dc:description", namespaces=NAMESPACES),
@@ -294,6 +296,7 @@ format = 'epub'
 #   - title
 #   - author
 #   - subject
+#   - category (Standard Ebooks category, e.g. "Fiction", "Science Fiction")
 #   - collection
 #   - source
 #   - description
